@@ -110,6 +110,8 @@ Every method returns the raw JSON response body as a `String` (or `null` for an 
 | 24 | `addWebhook(formId, url)` | `POST /forms/{formId}/webhooks` |
 | 25 | `deleteWebhook(formId, webhookId)` | `DELETE /forms/{formId}/webhooks/{webhookId}` |
 
+**Webhook signing secrets are shown once.** `addWebhook(formId, url)` returns the full signing `secret` (`whsec_…`) in its response (`id`, `formId`, `url`, `secret`, `note`); store it then. `listWebhooks(formId)` never returns it: each row carries `secretHint` (`whsec_…` plus the last 4 characters, or just `whsec_…` for short secrets) and `secretNote` instead of `secret`. To replace a lost secret, delete the webhook and add it again. See [CHANGELOG.md](CHANGELOG.md).
+
 `listSubmissions` and `listTemplates` also have convenience overloads
 (`listSubmissions(formId)` defaults to page 1, page size 25, no status filter;
 `listTemplates()` defaults to `es`). `createForm(title, fields)` omits the description.
