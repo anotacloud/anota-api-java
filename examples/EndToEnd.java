@@ -12,8 +12,8 @@ import cloud.anota.AnotaClient;
  * <p>Compile and run with the built jar on the classpath, e.g.:
  * <pre>
  *   mvn -q package
- *   javac -cp target/anota-api-1.0.0.jar examples/EndToEnd.java -d target/examples
- *   java  -cp "target/anota-api-1.0.0.jar;target/examples" EndToEnd   # ';' -&gt; ':' on macOS/Linux
+ *   javac -cp target/anota-api-2.0.0.jar examples/EndToEnd.java -d target/examples
+ *   java  -cp "target/anota-api-2.0.0.jar;target/examples" EndToEnd   # ';' -&gt; ':' on macOS/Linux
  * </pre>
  */
 public class EndToEnd {
